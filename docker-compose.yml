@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  app:
+    container_name: tocomplete-alphablog
+    build: .
+    ports:
+      - '8080:3000'
+    volumes:
+      - '.:/alphablog'
+    tty: true
+    stdin_open: true
+
