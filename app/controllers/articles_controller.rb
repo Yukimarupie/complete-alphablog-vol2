@@ -26,6 +26,7 @@ class ArticlesController < ApplicationController
         #@article = Article.new(params.require(:article).permit(:title, :description))
         #↑privateで設定したのでDRYで削除
         @article = Article.new(article_params)
+        @article.user = User.first
         if @article.save
         #render plain: @article.inspect #このinspexctがないと、titleやdescriptionが表示されない
         #redirect_to article_path(@article)#rails routesで確認して、URIが/articles/:id(.:format) になってるから@articleも入れる。
